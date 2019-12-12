@@ -1,12 +1,53 @@
-
-
-  <input [(ngModel)] = "value1">
-
-  <input [(ngModel)] = "value2">
-
-  <div *ngFor="let i of value2; let i = index">
-    <div *ngFor="let i of value1; let i = index">
-      <div class="box"></div>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-3">
+      <table class="menu1">
+        <tbody>
+        <td>
+          <tr> Настройка</tr>
+          <tr> Bw 220</tr>
+          <tr> Настройка</tr>
+          <tr class="aa"> Количество рядов (JTI)</tr>
+        <tr><input [(ngModel)] = "value1"></tr>
+          <tr><div class="form-group">
+            <label for="exampleFormControlSelect1">Регион</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+              <option>Москва</option>
+              <option>Ростов</option>
+              <option>Калуга</option>
+            </select>
+          </div></tr>
+<tr><div class="form-group">
+  <label for="exampleFormControlSelect1">Портфельная территория</label>
+  <select class="form-control" id="exampleFormControlSelect2">
+    <option>Московская область</option>
+    <option>Ростовская область</option>
+    </select>
+</div></tr>
+          <tr>SKU</tr>
+<tr>Winston</tr>
+          <tr>LD</tr>
+          <tr>Бренд 3</tr>
+          <tr>Бренд 4</tr>
+          <tr class="aa"><button type="button" class="btn btn-success">Сохранить</button></tr>
+            <tr class="aa"><button type="button" class="btn btn-secondary">Отменить</button></tr>
+        </td>
+        </tbody>
+      </table>
+    </div>
+    <div class="col">
+      <div class="list">
+        <div class="box">
+        </div>
+          <div class="box">
+          </div>
+      </div>
+    </div>
     </div>
   </div>
+
+
+
+
+
 

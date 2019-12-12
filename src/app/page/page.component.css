@@ -3,3 +3,21 @@
   width: 100px;
   height: 100px;
 }
+.menu1{
+  background-color:#efefef;
+
+}
+
+.menu1 tr {
+  padding: .3em 1em;
+  border-bottom:   1px solid black;
+}
+td{
+
+  padding: 10px;
+  padding-left: 20px;
+
+}
+.aa {
+  border: none!important;
+}
