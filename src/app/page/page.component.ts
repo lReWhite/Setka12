@@ -6,8 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./page.component.css']
 })
 export class PageComponent implements OnInit {
-  value1: any;
-  value2: any;
+  value1: string;
+  value2: string;
 
   constructor() { }
 
