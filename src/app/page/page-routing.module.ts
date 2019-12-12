@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import {PageComponent} from './page.component';
 
 
 const routes: Routes = [
-  {path: 'page', loadChildren: './page/page.module#PageModule'}
+  {path: '', component: PageComponent}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class PageRoutingModule { }

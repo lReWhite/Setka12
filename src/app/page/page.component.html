@@ -1,0 +1,12 @@
+
+
+  <input [(ngModel)] = "value1">
+
+  <input [(ngModel)] = "value2">
+
+  <div *ngFor="let i of value2; let i = index">
+    <div *ngFor="let i of value1; let i = index">
+      <div class="box"></div>
+    </div>
+  </div>
+
