@@ -1,5 +1,5 @@
 .box {
-  background-color: #24292e;
+  background-color: #1d3b4e;
   width: 100px;
   height: 100px;
 }
@@ -9,7 +9,7 @@
 }
 
 .menu1 tr {
-  padding: .3em 1em;
+
   border-bottom:   1px solid black;
 }
 td{
