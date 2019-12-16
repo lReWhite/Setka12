@@ -1,11 +1,18 @@
 .box {
-  background-color: #1d3b4e;
+  background-color: #efefef;
   width: 100px;
   height: 100px;
+  margin: 10px;
 }
 .menu1{
   background-color:#efefef;
 
+}
+
+.eq-row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
 }
 
 .menu1 tr {

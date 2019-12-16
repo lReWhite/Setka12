@@ -3,8 +3,9 @@ import { CommonModule } from '@angular/common';
 
 import { PageRoutingModule } from './page-routing.module';
 import { PageComponent } from './page.component';
-import {FormsModule} from '@angular/forms';
-import {DragDropModule} from '@angular/cdk/drag-drop';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+
+import {NgDragDropModule} from 'ng-drag-drop';
 
 
 @NgModule({
@@ -13,7 +14,9 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     CommonModule,
     PageRoutingModule,
     FormsModule,
-    DragDropModule
+    ReactiveFormsModule,
+    NgDragDropModule.forRoot()
+
   ]
 })
 export class PageModule { }

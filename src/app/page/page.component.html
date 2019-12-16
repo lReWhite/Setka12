@@ -1,29 +1,28 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-3">
-      <table class="menu1">
+          <table class="menu1">
         <tbody>
         <td>
-          <tr> Настройка</tr>
-          <tr>
-            <div class="example-container">
 
-
-              <div
-                cdkDropList
-                #todoList="cdkDropList"
-                [cdkDropListData]="todo"
-                [cdkDropListConnectedTo]="[doneList]"
-                class="example-list"
-                (cdkDropListDropped)="drop($event)">
-                <div class="example-box" *ngFor="let item of todo" cdkDrag>{{item}}</div>
-              </div>
-            </div>
-
+           <tr>
+             <div class="card card-outline-primary mb-3" droppable [dropScope]="'swap-target-1'" [dragOverClass]="'drag-target-border'"
+                  [dragHintClass]="'drag-hint'" (onDrop)="onList1Drop($event)">
+               <div class="card-header card-inverse card-primary">List 1</div>
+               <div class="card-block scroll-list">
+                 <ul class="list-group">
+                   <li draggable *ngFor="let item of list1" [dragScope]="'swap-target-2'" [dragClass]="'drag-over'" [dragData]="item" class="list-group-item ">
+                     {{item.name}}
+                   </li>
+                 </ul>
+               </div>
+             </div>
           </tr>
-          <tr> Настройка</tr>
+          <tr class="aa"> Настройка</tr>
           <tr class="aa"> Количество рядов (JTI)</tr>
-        <tr><input [(ngModel)] = "value1"></tr>
+        <tr class="aa"><input [formControl]="rows"></tr>
+          <tr class="aa"> Количество рядов (JTI)</tr>
+          <tr class="aa"><input [formControl]="cols"></tr>
           <tr><div class="form-group">
             <label for="exampleFormControlSelect1">Регион</label>
             <select class="form-control" id="exampleFormControlSelect1">
@@ -47,31 +46,30 @@
           <tr class="aa"><button type="button" class="btn btn-success">Сохранить</button></tr>
             <tr class="aa"><button type="button" class="btn btn-secondary">Отменить</button></tr>
         </td>
-        </tbody>
+         </tbody>
       </table>
     </div>
     <div class="col">
-      <div class="list" >
-        <div class="box" >
-          <div class="example-container">
-            <div
-              cdkDropList
-              #doneList="cdkDropList"
-              [cdkDropListData]="done"
-              [cdkDropListConnectedTo]="[todoList]"
-              class="example-list"
-              (cdkDropListDropped)="drop($event)">
-              <div class="example-box" *ngFor="let item of done" cdkDrag>{{item}}</div>
+
+        <div class="eq-row" *ngFor="let item of matrix; let i = index">
+          <div class="box" *ngFor="let item of colsArr; let j = index"  >
+            <div class="card card-outline-primary mb-3" droppable [dropScope]="'swap-target-2'" [dragOverClass]="'drag-target-border'"
+                 [dragHintClass]="'drag-hint'" (onDrop)="onList2Drop($event)">
+              <div class="card-header card-inverse card-primary"></div>
+              <div class="card-block scroll-list">
+                <ul class="list-group">
+                  <li draggable *ngFor="let item of list2" [dragScope]="'swap-target-1'" [dragClass]="'drag-over'" [dragData]="item" class="list-group-item">
+                    {{item.name}}
+                  </li>
+                </ul>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="box" *ngFor="let item of Array; let i = index">
-        </div>
+
       </div>
     </div>
     </div>
   </div>
-
+</div>
 
 
 
