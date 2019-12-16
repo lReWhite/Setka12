@@ -17,9 +17,9 @@ export class PageComponent implements OnInit {
 allArray:
   [{},
   {}];
+  all: number
 
-
-
+i: number
   constructor() { }
 
   list1 = [
@@ -37,6 +37,8 @@ allArray:
   }
 
   onList2Drop(e: DropEvent) {
+
+
     this.list2.push(e.dragData);
     this.removeItem(e.dragData, this.list1)
   }
@@ -64,7 +66,7 @@ allArray:
       this.colsArr = [];
     }
   });
-    // new Array(this.value1).fill(null);
+
   }
   // drop(event: CdkDragDrop<string[]>) {
   //   if (event.previousContainer === event.container) {
