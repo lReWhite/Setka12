@@ -50,22 +50,21 @@
       </table>
     </div>
     <div class="col">
-
-        <div class="eq-row" *ngFor="let item of matrix; let i = index">
-          <div class="box" *ngFor="let item of colsArr; let j = index"  >
-            <div class="card card-outline-primary mb-3" droppable [dropScope]="'swap-target-2'" [dragOverClass]="'drag-target-border'"
-                 [dragHintClass]="'drag-hint'" (onDrop)="onList2Drop($event)">
+        <div class="eq-row" *ngFor="let item of colsArr; let i = index" >
+            <div class="box" *ngFor="let item of  matrix ; let j = index">
+                <div class="card card-outline-primary mb-3" droppable  [dropScope]="'swap-target-2'" [dragOverClass]="'drag-target-border'"
+                 [dragHintClass]="'drag-hint'"  (onDrop)="onList2Drop($event)"  >
               <div class="card-header card-inverse card-primary"></div>
               <div class="card-block scroll-list">
                 <ul class="list-group">
                   <li draggable *ngFor="let item of list2" [dragScope]="'swap-target-1'" [dragClass]="'drag-over'" [dragData]="item" class="list-group-item">
-                    {{item.name}}
+                    {{item.name}}+ {{i}}+{{j}}
                   </li>
                 </ul>
               </div>
             </div>
+            </div>
 
-      </div>
     </div>
     </div>
   </div>

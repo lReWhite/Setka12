@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 import {FormControl} from '@angular/forms';
 import {DropEvent} from 'ng-drag-drop';
 
@@ -14,12 +13,10 @@ export class PageComponent implements OnInit {
   cols: FormControl;
   matrix;
   colsArr;
-allArray:
-  [{},
-  {}];
-  all: number
 
-i: number
+
+
+
   constructor() { }
 
   list1 = [
@@ -31,6 +28,8 @@ i: number
   list2 = [
 
   ];
+  private j: number;
+  private i: number;
   onList1Drop(e: DropEvent) {
     this.list1.push(e.dragData);
     this.removeItem(e.dragData, this.list2)
@@ -38,11 +37,10 @@ i: number
 
   onList2Drop(e: DropEvent) {
 
-
     this.list2.push(e.dragData);
     this.removeItem(e.dragData, this.list1)
-  }
 
+  }
   removeItem(item: any, list: Array<any>) {
     let index = list.map(function (e) {
       return e.name
@@ -68,15 +66,6 @@ i: number
   });
 
   }
-  // drop(event: CdkDragDrop<string[]>) {
-  //   if (event.previousContainer === event.container) {
-  //     moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
-  //   } else {
-  //     transferArrayItem(event.previousContainer.data,
-  //       event.container.data,
-  //       event.previousIndex,
-  //       event.currentIndex);
-  //   }
-  // }
+
 
 }
