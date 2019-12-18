@@ -1,53 +1,59 @@
-<div class="container">
+<div>
   <div class="row">
     <div class="col-lg-3">
-          <table class="menu1">
-        <tbody>
-        <td>
+      <ul class="list-group list-group-flush">
 
-           <tr>
-             <div class="card card-outline-primary mb-3" droppable [dropScope]="'swap-target-1'" [dragOverClass]="'drag-target-border'"
-                  [dragHintClass]="'drag-hint'" (onDrop)="onList1Drop($event)">
-               <div class="card-header card-inverse card-primary">List 1</div>
-               <div class="card-block scroll-list">
-                 <ul class="list-group">
-                   <li draggable *ngFor="let item of list1" [dragScope]="'swap-target-2'" [dragClass]="'drag-over'" [dragData]="item" class="list-group-item ">
-                     {{item.name}}
-                   </li>
-                 </ul>
-               </div>
-             </div>
-          </tr>
-          <tr class="aa"> Настройка</tr>
-          <tr class="aa"> Количество рядов (JTI)</tr>
-        <tr class="aa"><input [formControl]="rows" ></tr>
-          <tr class="aa"> Количество рядов (JTI)</tr>
-          <tr class="aa"><input [formControl]="cols"></tr>
-          <tr><div class="form-group">
-            <label for="exampleFormControlSelect1">Регион</label>
-            <select class="form-control" id="exampleFormControlSelect1">
-              <option>Москва</option>
-              <option>Ростов</option>
-              <option>Калуга</option>
-            </select>
-          </div></tr>
-<tr><div class="form-group">
-  <label for="exampleFormControlSelect1">Портфельная территория</label>
-  <select class="form-control" id="exampleFormControlSelect2">
-    <option>Московская область</option>
-    <option>Ростовская область</option>
-    </select>
-</div></tr>
-          <tr>SKU</tr>
-<tr>Winston</tr>
-          <tr>LD</tr>
-          <tr>Бренд 3</tr>
-          <tr>Бренд 4</tr>
-          <tr class="aa"><button type="button" class="btn btn-success">Сохранить</button></tr>
-            <tr class="aa"><button type="button" class="btn btn-secondary">Отменить</button></tr>
-        </td>
-         </tbody>
-      </table>
+        <div class="card-header card-inverse card-primary">Настройка</div>
+<div [hidden] = "isShow">
+
+  <li class="list-group-item"> <button type="button" class="btn btn-default"(click) = toggleDisplay()>b200 ></button></li>
+
+
+        <li class="list-group-item"><div class="form-group">
+          <label for="exampleFormControlSelect1">Регион</label>
+          <select class="form-control" id="exampleFormControlSelect1">
+            <option>Москва</option>
+            <option>Ростов</option>
+            <option>Калуга</option>
+          </select>
+        </div></li>
+        <li class="list-group-item"><div class="form-group">
+          <label for="exampleFormControlSelect1">Портфельная территория</label>
+          <select class="form-control" id="exampleFormControlSelect2">
+            <option>Московская область</option>
+            <option>Ростовская область</option>
+          </select>
+        </div></li>
+        <li class="list-group-item">SKU
+        <li class="list-group-item">Winston</li>
+        <li class="list-group-item">LD</li>
+        <li class="list-group-item">Бренд 3</li>
+        <li class="list-group-item">Бренд 4</li>
+        <li class="list-group-item"><button type="button" class="btn btn-success">Сохранить</button></li>
+        <li class="list-group-item"><button type="button" class="btn btn-secondary">Отменить</button></li>
+</div>
+        <div [hidden] = "!isShow">
+          <li class="list-group-item"> <button type="button" class="btn btn-default" (click) = toggleDisplay()>< Назад</button></li>s
+          <div  droppable [dropScope]="'swap-target-1'" [dragOverClass]="'drag-target-border'" [dragHintClass]="'drag-hint'" (onDrop)="onList1Drop($event)">
+
+
+            <li class="list-group-item" draggable *ngFor="let item of list1" [dragScope]="'swap-target-2'" [dragClass]="'drag-over'" [dragData]="item" class="list-group-item ">
+              {{item.name}}
+            </li>
+
+
+          </div>
+          <li class="list-group-item">
+            Количество строк (JTI)
+            <input [formControl]="rows" >
+          </li>
+          <li class="list-group-item">
+            Количество рядов (JTI)
+            <input [formControl]="cols" >
+          </li>
+        </div>
+      </ul>
+
     </div>
     <div class="col">
         <div class="eq-row" *ngFor="let item of matrix; let i = index">
@@ -70,6 +76,8 @@
         </div>
     </div>
   </div>
+
+
 </div>
 
 

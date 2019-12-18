@@ -14,7 +14,11 @@ export class PageComponent implements OnInit {
   cols: FormControl;
   matrix;
   colsArr;
+  isShow = false;
 
+  toggleDisplay() {
+    this.isShow = !this.isShow;
+  }
 
 
   constructor() { }
@@ -29,6 +33,12 @@ export class PageComponent implements OnInit {
 [ {name: 'pusto'}],
 [ {name: 'pusto'}],
 [ {name: 'pusto'}],
+[ {name: 'pusto'}],
+[ {name: 'pusto'}],
+[ {name: 'pusto'}],
+[ {name: 'pusto'}],
+[ {name: 'pusto'}],
+[ {name: 'pusto'}]
 
   ];
   onList1Drop(e: DropEvent) {
@@ -67,15 +77,5 @@ export class PageComponent implements OnInit {
   });
 
   }
-  // drop(event: CdkDragDrop<string[]>) {
-  //   if (event.previousContainer === event.container) {
-  //     moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
-  //   } else {
-  //     transferArrayItem(event.previousContainer.data,
-  //       event.container.data,
-  //       event.previousIndex,
-  //       event.currentIndex);
-  //   }
-  // }
 
 }
