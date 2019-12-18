@@ -14,21 +14,21 @@ export class PageComponent implements OnInit {
   cols: FormControl;
   matrix;
   colsArr;
-allArray:
-  [{},
-  {}];
-  all: number
 
-i: number
+
+
   constructor() { }
 
   list1 = [
-    {name: 'b200'},
+     {name: 'b200'},
     {name: 'b210'},
     {name: 'b230'}
   ];
 
-  list2 = [
+  list2:any[] = [
+[ {name: 'pusto'}],
+[ {name: 'pusto'}],
+[ {name: 'pusto'}],
 
   ];
   onList1Drop(e: DropEvent) {
@@ -36,11 +36,10 @@ i: number
     this.removeItem(e.dragData, this.list2)
   }
 
-  onList2Drop(e: DropEvent) {
+  onList2Drop(e: DropEvent, i , j) {
 
+    this.list2[j][i]=(e.dragData);
 
-    this.list2.push(e.dragData);
-    this.removeItem(e.dragData, this.list1)
   }
 
   removeItem(item: any, list: Array<any>) {
